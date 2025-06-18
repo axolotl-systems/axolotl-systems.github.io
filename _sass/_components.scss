@@ -193,11 +193,24 @@
     flex-direction: column;
     gap: $spacing-sm;
     align-items: center;
-    margin-bottom: $spacing-3xl;
+    margin-bottom: $spacing-md;
     
     @media (min-width: $breakpoint-sm) {
       flex-direction: row;
       justify-content: center;
+    }
+  }
+  
+  &__availability {
+    margin-bottom: $spacing-xl;
+    
+    &-note {
+      font-size: 0.875rem;
+      color: var(--color-accent);
+      text-align: center;
+      font-style: italic;
+      margin: 0;
+      opacity: 0.8;
     }
   }
   
