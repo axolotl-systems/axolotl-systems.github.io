@@ -1,0 +1,62 @@
+# Site settings
+title: Axolotl Systems
+email: hello@axolotl.systems
+description: >-
+  Premium tech consultancy specializing in search algorithms and recommender systems.
+  Precision in every algorithm.
+baseurl: ""
+url: "https://axolotl.systems"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Custom variables
+company:
+  name: "Axolotl Systems"
+  tagline: "Precision in every algorithm"
+  founder: "Anne Schuth"
+  phone: ""
+  address: ""
+
+# Single page site - no navigation needed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - _sass
+  - README.md
+
+# Collections
+collections:
+  services:
+    output: false
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# SEO
+twitter:
+  username: axolotlsystems
+  card: summary
+
+author:
+  name: Anne
+  twitter: axolotlsystems
+
+social:
+  name: Axolotl.systems
+  links:
+    - https://twitter.com/axolotlsystems
+    - https://linkedin.com/company/axolotl-systems
