@@ -1,0 +1,18 @@
+# humanstxt.org
+
+/* TEAM */
+Founder & Consultant: Anne Schuth
+Contact: info [at] axolotl.systems
+Location: Netherlands
+
+/* SITE */
+Last update: 2025/06/19
+Language: English / Dutch
+Doctype: HTML5
+IDE: VS Code, Claude Code
+
+/* THANKS */
+Built with Jekyll
+Hosted on GitHub Pages
+Logo design: Custom axolotl illustration
+Typography: Inter font family
