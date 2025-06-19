@@ -26,6 +26,10 @@ company:
 
 # Single page site - no navigation needed
 
+# Include dotfiles and special directories
+include:
+  - .well-known
+
 # Exclude from processing
 exclude:
   - Gemfile
