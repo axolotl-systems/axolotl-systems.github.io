@@ -22,6 +22,33 @@
     <!-- humans.txt -->
     <link type="text/plain" rel="author" href="{{ '/humans.txt' | relative_url }}">
     
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Axolotl Systems",
+      "url": "https://axolotl.systems",
+      "logo": "https://axolotl.systems/assets/images/axolotl.svg",
+      "description": "Make ML deployment boring. Professional consultancy specializing in search algorithms, recommender systems, and platform engineering.",
+      "founder": {
+        "@type": "Person",
+        "name": "Anne Schuth",
+        "jobTitle": "Founder & ML Engineering Consultant",
+        "alumniOf": ["Google", "Spotify", "DPG Media", "Blendle"],
+        "knowsAbout": ["Machine Learning", "Search Algorithms", "Recommender Systems", "Platform Engineering", "MLOps"]
+      },
+      "serviceType": ["ML Engineering Consulting", "Platform Engineering", "Fractional CTO", "Search Algorithm Optimization", "Recommender Systems"],
+      "areaServed": "Worldwide",
+      "email": "info@axolotl.systems",
+      "sameAs": [
+        "https://anneschuth.nl",
+        "https://linkedin.com/in/anneschuth",
+        "https://bsky.app/profile/anneschuth.nl"
+      ]
+    }
+    </script>
+    
     {%- if jekyll.environment == 'production' and site.google_analytics -%}
         {%- include google-analytics.html -%}
     {%- endif -%}

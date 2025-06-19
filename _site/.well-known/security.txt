@@ -1,0 +1,10 @@
+Contact: mailto:info@axolotl.systems
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en, nl
+Canonical: https://axolotl.systems/.well-known/security.txt
+Policy: https://axolotl.systems/security-policy
+Acknowledgments: https://axolotl.systems/security-acknowledgments
+
+# Security policy for Axolotl Systems
+# Please report security vulnerabilities responsibly
+# We appreciate your help in keeping our services secure
