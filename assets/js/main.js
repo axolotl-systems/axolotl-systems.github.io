@@ -55,36 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Enhanced form submission handling
-  const contactForm = document.querySelector('.form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this);
-      
-      // Basic form validation
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const projectType = formData.get('project-type');
-      const message = formData.get('message');
-      
-      if (!name || !email || !projectType || !message) {
-        showNotification('Please fill in all required fields.', 'error');
-        return;
-      }
-      
-      // Simple email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        showNotification('Please enter a valid email address.', 'error');
-        return;
-      }
-      
-      // Show success message
-      showNotification('Thank you! I\'ll get back to you within 24 hours.', 'success');
-      this.reset();
+  // Email button click tracking
+  const emailBtn = document.querySelector('.contact__email-btn');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', function() {
+      // Optional: Add analytics tracking here
+      console.log('Email CTA clicked');
     });
   }
   

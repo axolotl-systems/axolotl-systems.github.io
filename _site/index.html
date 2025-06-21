@@ -454,44 +454,23 @@
         </p>
       </div>
       
-      <div class="contact__form">
-        <form class="form" action="#" method="POST">
-          <div class="form__group">
-            <label class="form__label" for="name">Name</label>
-            <input class="form__input" type="text" id="name" name="name" required>
-          </div>
-          
-          <div class="form__group">
-            <label class="form__label" for="email">Email</label>
-            <input class="form__input" type="email" id="email" name="email" required>
-          </div>
-          
-          <div class="form__group">
-            <label class="form__label" for="project-type">Project Type</label>
-            <select class="form__input" id="project-type" name="project-type" required>
-              <option value="">Select project type</option>
-              <option value="72-hour-prototype">72-Hour Prototype</option>
-              <option value="production-system">Production System</option>
-              <option value="strategic-consultation">Strategic Consultation</option>
-            </select>
-          </div>
-          
-          <div class="form__group">
-            <label class="form__label" for="message">Project Details</label>
-            <textarea class="form__textarea" id="message" name="message" placeholder="Tell me about your project, timeline, and goals..." required></textarea>
-          </div>
-          
-          <button class="btn btn--primary btn--large" type="submit">
-            Send Project Brief
-          </button>
-        </form>
+      <div class="contact__cta">
+        <div class="contact__cta-content">
+          <p class="contact__cta-text">
+            Ready to get started? Drop me an email with your project details, timeline, and goals. 
+            I'll get back to you within 24 hours with next steps.
+          </p>
+          <a href="mailto:hello@axolotl.systems?subject=Project%20Inquiry&body=Hi%20Anne%2C%0A%0AI'm%20interested%20in%3A%0A%5B%20%5D%2072-hour%20prototype%0A%5B%20%5D%20Production%20system%0A%5B%20%5D%20Strategic%20consulting%0A%0AProject%20details%3A%0A%0ATimeline%3A%0A%0AGgoals%3A%0A%0AThanks!" 
+               class="btn btn--primary btn--large contact__email-btn">
+            <span class="contact__email-icon">📧</span>
+            Email Me Your Project Details
+          </a>
+          <p class="contact__response-time">
+            <strong>Response time:</strong> Within 24 hours • <strong>Located:</strong> Amsterdam, CET timezone
+          </p>
+        </div>
       </div>
       
-      <div class="contact__direct">
-        <p class="contact__direct-text">
-          Prefer to email directly? <a href="mailto:hello@axolotl.systems">hello@axolotl.systems</a>
-        </p>
-      </div>
     </div>
   </div>
 </section>
