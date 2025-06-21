@@ -134,7 +134,7 @@
   }
   
   &__content {
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 0.8s ease-out;\n  }\n  \n  &__logo {\n    text-align: center;\n    margin-bottom: $spacing-lg;\n    \n    @media (min-width: $breakpoint-lg) {\n      text-align: left;\n    }\n  }\n  \n  &__logo-image {\n    width: 120px;\n    height: auto;\n    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));\n    transition: transform 0.3s ease;\n    \n    &:hover {\n      transform: scale(1.05);\n    }\n    \n    @media (min-width: $breakpoint-md) {\n      width: 150px;\n    }\n    \n    @media (min-width: $breakpoint-lg) {\n      width: 180px;\n    }
   }
   
   &__badge {
@@ -494,17 +494,6 @@
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    transition: all 0.3s ease;
-    
-    &--sticky {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      box-shadow: var(--shadow-xl);
-      border: 1px solid var(--color-border);
-    }
   }
   
   &__button {
@@ -994,163 +983,5 @@
   
   @media (min-width: $breakpoint-lg) {
     width: 140px;
-  }
-}
-
-// Hero Stats Component
-.hero__stats {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-lg;
-  
-  @media (min-width: $breakpoint-md) {
-    gap: $spacing-xl;
-  }
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: $spacing-lg;
-  background: var(--color-bg-lighter);
-  border-radius: 16px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-  }
-  
-  &__number {
-    font-size: 2.5rem;
-    font-weight: $font-weight-black;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: $spacing-xs;
-    
-    @media (min-width: $breakpoint-md) {
-      font-size: 3rem;
-    }
-  }
-  
-  &__label {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    font-weight: $font-weight-semibold;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-}
-
-// Process Philosophy
-.process-philosophy {
-  margin-bottom: $spacing-xl;
-  text-align: center;
-  
-  &__text {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-    font-style: italic;
-    max-width: 600px;
-    margin: 0 auto;
-    
-    strong {
-      color: var(--color-white);
-      font-weight: $font-weight-semibold;
-    }
-  }
-}
-
-// Consulting Components
-.consulting-grid {
-  display: grid;
-  gap: $spacing-lg;
-  margin-bottom: $spacing-3xl;
-  
-  @media (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (min-width: $breakpoint-lg) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.consulting-card {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  padding: $spacing-lg;
-  text-align: center;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--color-blue);
-  }
-  
-  &__icon {
-    font-size: 2.5rem;
-    margin-bottom: $spacing-md;
-    display: block;
-  }
-  
-  &__title {
-    font-size: 1.125rem;
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacing-sm;
-    color: var(--color-white);
-  }
-  
-  &__description {
-    font-size: 0.95rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin: 0;
-  }
-}
-
-.consulting-approach {
-  margin-bottom: $spacing-3xl;
-  
-  &__title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: $spacing-xl;
-    color: var(--color-white);
-  }
-}
-
-.approach-points {
-  display: grid;
-  gap: $spacing-lg;
-  
-  @media (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.approach-point {
-  text-align: center;
-  
-  &__title {
-    font-size: 1.25rem;
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacing-sm;
-    color: var(--color-accent);
-  }
-  
-  &__description {
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin: 0;
   }
 }
