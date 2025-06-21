@@ -99,8 +99,8 @@
 
 // Modern Hero Section
 .hero {
-  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-lighter) 100%);
-  padding: $spacing-3xl 0;
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-lighter) 50%, var(--color-bg-lighter) 100%);
+  padding: $spacing-3xl 0 calc($spacing-3xl + 2rem);
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -117,6 +117,18 @@
     background: radial-gradient(circle at 20% 80%, rgba(241, 120, 89, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent 0%, var(--color-bg-lighter) 100%);
+    pointer-events: none;
+    z-index: 2;
   }
   
   .container {
@@ -481,6 +493,18 @@
 .services-tabs {
   padding: $spacing-3xl 0;
   background: var(--color-bg-lighter);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--color-bg-lighter) 0%, var(--color-bg-lighter) 100%);
+    z-index: 1;
+  }
 }
 
 .tabs {
@@ -504,6 +528,18 @@
       z-index: 100;
       box-shadow: var(--shadow-xl);
       border: 1px solid var(--color-border);
+      animation: slideInFromTop 0.3s ease-out;
+    }
+    
+    @keyframes slideInFromTop {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
     }
   }
   
