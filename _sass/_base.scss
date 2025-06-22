@@ -27,6 +27,12 @@
   --gradient-accent: linear-gradient(135deg, #F17859 0%, #3B82F6 100%);
   --gradient-text: linear-gradient(135deg, #F17859 0%, #3B82F6 100%);
   
+  // Service-specific gradients
+  --gradient-prototyping: linear-gradient(135deg, #F17859 0%, #FF6B35 50%, #FF4500 100%);
+  --gradient-production: linear-gradient(135deg, #3B82F6 0%, #2563EB 50%, #1D4ED8 100%);
+  --gradient-consulting: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6D28D9 100%);
+  --gradient-fractional: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+  
   // Shadows
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);

@@ -1,75 +1,5 @@
-// Enhanced JavaScript for sticky-below-nav tabs
+// Enhanced JavaScript for color-coded service sections
 document.addEventListener('DOMContentLoaded', function() {
-  // Tab functionality for services
-  const tabButtons = document.querySelectorAll('.tabs__button');
-  const tabPanels = document.querySelectorAll('.tabs__panel');
-  const tabsNav = document.querySelector('.tabs__nav');
-  
-  tabButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const targetTab = this.getAttribute('data-tab');
-      
-      // Remove active class from all buttons and panels
-      tabButtons.forEach(btn => btn.classList.remove('tabs__button--active'));
-      tabPanels.forEach(panel => panel.classList.remove('tabs__panel--active'));
-      
-      // Add active class to clicked button and corresponding panel
-      this.classList.add('tabs__button--active');
-      document.getElementById(targetTab).classList.add('tabs__panel--active');
-    });
-  });
-  
-  // Sticky tabs functionality - positioned below nav
-  if (tabsNav) {
-    const tabsSection = document.querySelector('.services-tabs');
-    const header = document.querySelector('.header-simple');
-    const headerHeight = header ? header.offsetHeight : 80;
-    
-    let tabsNavOriginalOffsetTop = null;
-    
-    function initializeStickyTabs() {
-      // Calculate the original offset when the page loads or resizes
-      tabsNavOriginalOffsetTop = tabsSection.offsetTop + (tabsNav.offsetTop - tabsSection.offsetTop);
-    }
-    
-    function handleStickyTabs() {
-      if (tabsNavOriginalOffsetTop === null) {
-        initializeStickyTabs();
-      }
-      
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const tabsSectionRect = tabsSection.getBoundingClientRect();
-      const isInTabsSection = tabsSectionRect.top <= headerHeight && tabsSectionRect.bottom > headerHeight + 100;
-      
-      if (isInTabsSection && scrollTop > tabsNavOriginalOffsetTop - headerHeight - 10) {
-        tabsNav.classList.add('tabs__nav--sticky');
-      } else {
-        tabsNav.classList.remove('tabs__nav--sticky');
-      }
-    }
-    
-    // Throttle scroll events for better performance
-    let ticking = false;
-    function throttledStickyHandler() {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleStickyTabs();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-    
-    window.addEventListener('scroll', throttledStickyHandler);
-    window.addEventListener('resize', () => {
-      tabsNavOriginalOffsetTop = null; // Reset on resize
-      throttledStickyHandler();
-    });
-    
-    // Initialize on load
-    initializeStickyTabs();
-  }
-  
   // Smooth scrolling for anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach(link => {
@@ -143,6 +73,21 @@ document.addEventListener('DOMContentLoaded', function() {
       this.style.transform = "translateY(0) scale(1)";
     });
   });
+  
+  // Service section reveal on scroll
+  const serviceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('service--visible');
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+  });
+  
+  const serviceElements = document.querySelectorAll('.service');
+  serviceElements.forEach(el => serviceObserver.observe(el));
 });
 
 // Add CSS for notifications and animations
@@ -176,6 +121,17 @@ style.textContent = `
   
   .animate-in {
     animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .service {
+    opacity: 0.95;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .service--visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   
   @media (max-width: 640px) {

@@ -493,9 +493,9 @@
   }
 }
 
-// Service Tabs
-.services-tabs {
-  padding: $spacing-3xl 0;
+// Services Overview
+.services {
+  padding: $spacing-3xl 0 $spacing-lg 0;
   background: var(--color-bg-lighter);
   position: relative;
   
@@ -508,6 +508,181 @@
     height: 50px;
     background: linear-gradient(to bottom, var(--color-bg-lighter) 0%, var(--color-bg-lighter) 100%);
     z-index: 1;
+  }
+}
+
+// Approach Navigation
+.approach-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+  margin-top: $spacing-xl;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-lg;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    text-align: center;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    &--prototyping {
+      border-top: 4px solid #F17859;
+      
+      &:hover {
+        border-color: #F17859;
+        background: linear-gradient(135deg, rgba(241, 120, 89, 0.05) 0%, var(--color-bg) 100%);
+      }
+      
+      .approach-nav__title {
+        color: #F17859;
+      }
+    }
+    
+    &--production {
+      border-top: 4px solid #3B82F6;
+      
+      &:hover {
+        border-color: #3B82F6;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, var(--color-bg) 100%);
+      }
+      
+      .approach-nav__title {
+        color: #3B82F6;
+      }
+    }
+    
+    &--consulting {
+      border-top: 4px solid #8B5CF6;
+      
+      &:hover {
+        border-color: #8B5CF6;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, var(--color-bg) 100%);
+      }
+      
+      .approach-nav__title {
+        color: #8B5CF6;
+      }
+    }
+    
+    &--fractional {
+      border-top: 4px solid #10B981;
+      
+      &:hover {
+        border-color: #10B981;
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--color-bg) 100%);
+      }
+      
+      .approach-nav__title {
+        color: #10B981;
+      }
+    }
+  }
+  
+  &__title {
+    font-weight: $font-weight-bold;
+    font-size: 1.125rem;
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+}
+
+// Individual Service Sections
+.service {
+  position: relative;
+  padding: $spacing-3xl 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    z-index: 2;
+  }
+  
+  &--prototyping {
+    background: linear-gradient(135deg, var(--color-bg) 0%, rgba(241, 120, 89, 0.03) 100%);
+    
+    &::before {
+      background: var(--gradient-prototyping);
+    }
+    
+    .service-content__title {
+      background: var(--gradient-prototyping);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn--primary {
+      background: var(--gradient-prototyping);
+    }
+  }
+  
+  &--production {
+    background: linear-gradient(135deg, var(--color-bg-lighter) 0%, rgba(59, 130, 246, 0.03) 100%);
+    
+    &::before {
+      background: var(--gradient-production);
+    }
+    
+    .service-content__title {
+      background: var(--gradient-production);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn--primary {
+      background: var(--gradient-production);
+    }
+  }
+  
+  &--consulting {
+    background: linear-gradient(135deg, var(--color-bg) 0%, rgba(139, 92, 246, 0.03) 100%);
+    
+    &::before {
+      background: var(--gradient-consulting);
+    }
+    
+    .service-content__title {
+      background: var(--gradient-consulting);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn--primary {
+      background: var(--gradient-consulting);
+    }
   }
 }
 
