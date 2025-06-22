@@ -88,6 +88,35 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const serviceElements = document.querySelectorAll('.service');
   serviceElements.forEach(el => serviceObserver.observe(el));
+  
+  // Back to Top Button functionality
+  const backToTopBtn = document.getElementById('backToTop');
+  const servicesSection = document.getElementById('services');
+  
+  if (backToTopBtn && servicesSection) {
+    // Show/hide button based on scroll position
+    const toggleBackToTop = () => {
+      const scrollPosition = window.pageYOffset;
+      const servicesOffset = servicesSection.offsetTop;
+      
+      if (scrollPosition > servicesOffset + 500) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    };
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleBackToTop);
+    
+    // Click handler to scroll to services
+    backToTopBtn.addEventListener('click', () => {
+      servicesSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  }
 });
 
 // Add CSS for notifications and animations
