@@ -125,8 +125,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent 0%, var(--color-bg-lighter) 100%);
+    height: 200px;
+    background: linear-gradient(to bottom, 
+      transparent 0%, 
+      rgba(30, 41, 59, 0.3) 40%,
+      rgba(30, 41, 59, 0.7) 70%,
+      var(--color-bg-lighter) 100%);
     pointer-events: none;
     z-index: 2;
   }
@@ -522,10 +526,10 @@
     
     &--sticky {
       position: fixed;
-      top: 20px;
+      top: 90px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 100;
+      z-index: 90;
       box-shadow: var(--shadow-xl);
       border: 1px solid var(--color-border);
       animation: slideInFromTop 0.3s ease-out;
@@ -991,6 +995,24 @@
       br {
         display: none;
       }
+    }
+  }
+  
+  &__schedule {
+    text-align: center;
+    margin-top: 4rem;
+    
+    &-title {
+      font-size: 1.75rem;
+      font-weight: $font-weight-bold;
+      margin-bottom: 1rem;
+      color: var(--color-white);
+    }
+    
+    &-subtitle {
+      color: var(--color-text-muted);
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
     }
   }
 }
