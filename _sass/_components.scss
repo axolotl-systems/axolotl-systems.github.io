@@ -613,6 +613,40 @@
   }
 }
 
+// Services Divider
+.services-divider {
+  padding: $spacing-3xl 0;
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-lighter) 100%);
+  position: relative;
+  
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-lg;
+    text-align: center;
+  }
+  
+  &__line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-border) 20%, var(--color-accent) 50%, var(--color-border) 80%, transparent 100%);
+    max-width: 200px;
+  }
+  
+  &__text {
+    font-size: 1.25rem;
+    font-weight: $font-weight-semibold;
+    color: var(--color-white);
+    white-space: nowrap;
+    padding: 0 $spacing-md;
+    
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
 // Individual Service Sections
 .service {
   position: relative;
@@ -682,6 +716,26 @@
     
     .btn--primary {
       background: var(--gradient-consulting);
+    }
+  }
+  
+  &--fractional {
+    background: linear-gradient(135deg, var(--color-bg-lighter) 0%, rgba(16, 185, 129, 0.03) 100%);
+    
+    &::before {
+      background: var(--gradient-fractional);
+      height: 8px;
+    }
+    
+    .service-content__title {
+      background: var(--gradient-fractional);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn--primary {
+      background: var(--gradient-fractional);
     }
   }
 }
