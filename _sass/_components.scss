@@ -27,9 +27,19 @@
   gap: $spacing-md;
   
   .logo {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     opacity: 0.9;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    @media (min-width: $breakpoint-md) {
+      width: 120px;
+      height: 120px;
+    }
   }
   
   h1 {
