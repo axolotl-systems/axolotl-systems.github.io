@@ -134,6 +134,13 @@
       margin-top: $spacing-lg;
       margin-bottom: 0;
     }
+    
+    &.kvk {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: $spacing-xs;
+      margin-bottom: 0;
+    }
   }
   
   .email-link {
