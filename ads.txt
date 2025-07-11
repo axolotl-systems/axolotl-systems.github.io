@@ -1,0 +1,3 @@
+# ads.txt file for axolotl.systems
+# This domain does not participate in programmatic advertising
+# Contact info@axolotl.systems for direct advertising inquiries

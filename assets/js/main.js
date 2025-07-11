@@ -1,31 +1,5 @@
-// Mobile navigation toggle
+// Enhanced JavaScript for color-coded service sections
 document.addEventListener('DOMContentLoaded', function() {
-  const navToggle = document.querySelector('.nav__toggle');
-  const navMenu = document.querySelector('.nav__menu');
-  
-  if (navToggle && navMenu) {
-    navToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('nav__menu--open');
-      navToggle.classList.toggle('nav__toggle--open');
-      
-      // Update aria attributes
-      const isOpen = navMenu.classList.contains('nav__menu--open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
-  }
-  
-  // Close mobile menu when clicking on a link
-  const navLinks = document.querySelectorAll('.nav__link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      if (navMenu.classList.contains('nav__menu--open')) {
-        navMenu.classList.remove('nav__menu--open');
-        navToggle.classList.remove('nav__toggle--open');
-        navToggle.setAttribute('aria-expanded', false);
-      }
-    });
-  });
-  
   // Smooth scrolling for anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach(link => {
@@ -41,35 +15,165 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Form submission handling
-  const contactForm = document.querySelector('#contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this);
-      
-      // Basic form validation
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const message = formData.get('message');
-      
-      if (!name || !email || !message) {
-        alert('Please fill in all required fields.');
-        return;
+  // Email button click tracking
+  const emailBtn = document.querySelector('.contact__email-btn');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', function() {
+      // Optional: Add analytics tracking here
+      console.log('Email CTA clicked');
+    });
+  }
+  
+  // Notification system
+  function showNotification(message, type) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification--${type}`;
+    notification.textContent = message;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Trigger animation
+    setTimeout(() => notification.classList.add('notification--show'), 100);
+    
+    // Remove after 5 seconds
+    setTimeout(() => {
+      notification.classList.remove('notification--show');
+      setTimeout(() => notification.remove(), 300);
+    }, 5000);
+  }
+  
+  // Animate elements on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
       }
-      
-      // Simple email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
+    });
+  }, observerOptions);
+  
+  // Observe elements for animation
+  const animateElements = document.querySelectorAll('.feature-card, .process-step, .experience-card, .problem-card');
+  animateElements.forEach(el => observer.observe(el));
+  
+  // Hero stats hover effects  
+  const statItems = document.querySelectorAll(".stat-item");
+  statItems.forEach(item => {
+    item.addEventListener("mouseenter", function() {
+      this.style.transform = "translateY(-8px) scale(1.02)";
+    });
+    
+    item.addEventListener("mouseleave", function() {
+      this.style.transform = "translateY(0) scale(1)";
+    });
+  });
+  
+  // Service section reveal on scroll
+  const serviceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('service--visible');
       }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+  });
+  
+  const serviceElements = document.querySelectorAll('.service');
+  serviceElements.forEach(el => serviceObserver.observe(el));
+  
+  // Back to Top Button functionality
+  const backToTopBtn = document.getElementById('backToTop');
+  const servicesSection = document.getElementById('services');
+  
+  if (backToTopBtn && servicesSection) {
+    // Show/hide button based on scroll position
+    const toggleBackToTop = () => {
+      const scrollPosition = window.pageYOffset;
+      const servicesOffset = servicesSection.offsetTop;
       
-      // Show success message (in a real implementation, you'd send this to a server)
-      alert('Thank you for your message! We\'ll get back to you soon.');
-      this.reset();
+      if (scrollPosition > servicesOffset + 500) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    };
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleBackToTop);
+    
+    // Click handler to scroll to services
+    backToTopBtn.addEventListener('click', () => {
+      servicesSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     });
   }
 });
+
+// Add CSS for notifications and animations
+const style = document.createElement('style');
+style.textContent = `
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+  }
+  
+  .notification--success {
+    background: linear-gradient(135deg, #10B981, #34D399);
+  }
+  
+  .notification--error {
+    background: linear-gradient(135deg, #EF4444, #F87171);
+  }
+  
+  .notification--show {
+    transform: translateX(0);
+  }
+  
+  .animate-in {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .service {
+    opacity: 0.95;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .service--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 640px) {
+    .notification {
+      right: 10px;
+      left: 10px;
+      max-width: none;
+      transform: translateY(-100%);
+    }
+    
+    .notification--show {
+      transform: translateY(0);
+    }
+  }
+`;
+document.head.appendChild(style);
