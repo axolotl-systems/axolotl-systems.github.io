@@ -4,6 +4,11 @@
             <p class="footer__copyright">
                 © {{ 'now' | date: "%Y" }} Anne Schuth
             </p>
+            <div class="footer__links">
+                <a href="{{ '/privacy' | relative_url }}" class="footer__link">Privacy</a>
+                <a href="{{ '/disclaimer' | relative_url }}" class="footer__link">Disclaimer</a>
+                <a href="{{ '/algemene-voorwaarden' | relative_url }}" class="footer__link">Algemene Voorwaarden</a>
+            </div>
             <div class="footer__social">
                 <a href="https://anneschuth.nl" class="footer__social-link" target="_blank" rel="noopener">Blog</a>
                 <a href="https://bsky.app/profile/anneschuth.nl" class="footer__social-link" target="_blank" rel="noopener">Bluesky</a>

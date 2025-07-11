@@ -160,3 +160,62 @@
     }
   }
 }
+
+// Legal pages
+.legal {
+  padding: $spacing-3xl 0;
+  background: var(--color-bg);
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: var(--color-white);
+    margin-bottom: $spacing-xl;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: $font-weight-semibold;
+    color: var(--color-white);
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: $spacing-md;
+  }
+  
+  ul {
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-lg;
+    
+    li {
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: $spacing-xs;
+    }
+  }
+  
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  strong {
+    color: var(--color-white);
+  }
+}
