@@ -1,0 +1,34 @@
+---
+layout: default
+title: "Page Not Found | Axolotl Systems"
+description: "The page you're looking for doesn't exist."
+permalink: /404.html
+---
+
+<section class="error-page">
+  <div class="container">
+    <div class="error-content">
+      <div class="error-visual">
+        <img src="{{ '/assets/images/axolotl.svg' | relative_url }}" 
+             alt="Axolotl Systems" 
+             class="error-logo">
+      </div>
+      
+      <h1 class="error-title">404 - Page Not Found</h1>
+      
+      <p class="error-message">
+        The page you're looking for has wandered off like an axolotl looking for water. 
+        Let's get you back on track.
+      </p>
+      
+      <div class="error-actions">
+        <a href="{{ '/' | relative_url }}" class="btn btn--primary">
+          Go Home
+        </a>
+        <a href="mailto:hello@axolotl.systems" class="btn btn--secondary">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

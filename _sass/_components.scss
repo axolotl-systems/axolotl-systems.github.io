@@ -229,3 +229,100 @@
     color: var(--color-white);
   }
 }
+
+// 404 Error Page
+.error-page {
+  padding: $spacing-3xl 0;
+  background: var(--color-bg);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+}
+
+.error-content {
+  text-align: center;
+  
+  .error-visual {
+    margin-bottom: $spacing-xl;
+    
+    .error-logo {
+      width: 80px;
+      height: 80px;
+      opacity: 0.8;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05) rotate(5deg);
+      }
+    }
+  }
+  
+  .error-title {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: var(--color-white);
+    margin-bottom: $spacing-lg;
+    
+    @media (min-width: $breakpoint-md) {
+      font-size: 3rem;
+    }
+  }
+  
+  .error-message {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: $spacing-xl;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .error-actions {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Simple button styles for 404 page
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  
+  &--primary {
+    background: var(--color-accent);
+    color: var(--color-white);
+    
+    &:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &--secondary {
+    background: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    
+    &:hover {
+      background: var(--color-accent);
+      color: var(--color-white);
+      transform: translateY(-2px);
+    }
+  }
+}
