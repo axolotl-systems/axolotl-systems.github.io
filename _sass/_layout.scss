@@ -151,7 +151,7 @@
     line-height: 1.6;
   }
   
-  &__links {
+  &__nav-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing-lg;
@@ -179,7 +179,7 @@
     margin: 0;
   }
   
-  &__link {
+  &__nav-link {
     color: var(--color-text-muted);
     transition: color 0.2s ease;
     
@@ -198,7 +198,6 @@
     align-items: center;
     gap: $spacing-lg;
     padding-top: $spacing-lg;
-    border-top: 1px solid var(--color-border);
     
     @media (min-width: $breakpoint-md) {
       flex-direction: row;
