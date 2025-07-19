@@ -13,7 +13,7 @@ This is a Jekyll-based website for Axolotl Systems, a solo consultancy run by An
 # Install dependencies
 bundle install
 
-# Serve site locally with live reload
+# Serve site locally with live reload (default port 4000)
 bundle exec jekyll serve --livereload
 
 # Build for production
@@ -30,6 +30,12 @@ bundle exec jekyll build --watch
 
 # Serve with drafts
 bundle exec jekyll serve --drafts
+
+# Check if Jekyll dependencies need updating
+bundle outdated
+
+# Update Jekyll dependencies
+bundle update
 ```
 
 ## Architecture
@@ -46,7 +52,14 @@ bundle exec jekyll serve --drafts
 - `_includes/`: Reusable components (header.html, footer.html)
 - `_sass/`: Modular Sass files (base, layout, components, utilities)
 - `assets/`: Static assets (CSS, JS, images)
+- `.well-known/`: Security and discovery files (included in build)
 - `_config.yml`: Site configuration and navigation
+
+### Key Files
+- `index.html`: Homepage with all content sections
+- `about.html`, `services.html`, `contact.html`: Individual page content
+- `legal/privacy.html`, `legal/terms.html`: Legal pages
+- `404.html`: Custom 404 error page
 
 ### Design System
 - **Color Palette**: Dark theme with accent blue (#3B82F6)
@@ -95,3 +108,17 @@ bundle exec jekyll serve --drafts
 - Optimized images in assets/images/
 - Minimal JavaScript for navigation and forms
 - Jekyll plugins for sitemap and SEO
+
+## Jekyll Configuration
+
+### Dependencies (Gemfile)
+- Jekyll ~> 4.3.0
+- Minima theme ~> 2.5
+- Plugins: jekyll-feed, jekyll-sitemap, jekyll-seo-tag
+- Webrick for development server
+
+### Build Configuration
+- Output directory: `_site/`
+- Excludes: Gemfile, README.md, vendor directories
+- Includes: `.well-known` directory for security files
+- Sass output: compressed
