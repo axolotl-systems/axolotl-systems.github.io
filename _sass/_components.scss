@@ -115,6 +115,52 @@
   }
 }
 
+// Services Section
+.services {
+  padding: $spacing-3xl 0;
+  background: var(--color-bg);
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
+    color: var(--color-white);
+    margin-bottom: $spacing-md;
+
+    &:not(:first-child) {
+      margin-top: $spacing-xl;
+    }
+  }
+
+  h3 {
+    font-size: 1.375rem;
+    font-weight: $font-weight-semibold;
+    color: var(--color-white);
+    margin-bottom: $spacing-sm;
+    margin-top: $spacing-lg;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: $spacing-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 // Contact Section
 .contact {
   padding: $spacing-3xl 0;
