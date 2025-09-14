@@ -2,17 +2,17 @@
 
 > Masters of regeneration—when something breaks, we rebuild it better.
 
-Professional website for Axolotl Systems, a solo consultancy specializing in search algorithms, recommender systems, and platform engineering.
+Professional website for Anne Schuth, building search algorithms, social platforms, and scalable systems that matter.
 
 ## About
 
-Founded by Anne Schuth (PhD in Search Algorithms), Axolotl Systems helps companies deploy machine learning models multiple times a day, safely. We focus on building teams that ship code and deploy models.
+Anne Schuth (PhD in Search Algorithms) builds and evaluates software systems. Currently developing peerpressure—a social accountability app fighting phone addiction—and working on ML component evaluation at Ditto.
 
-**Services:**
-- Search algorithm optimization
-- Recommender systems implementation
-- Platform engineering and MLOps
-- Fractional CTO/Head of Engineering roles
+**Current Work:**
+- Product Development (peerpressure - social accountability app)
+- ML Evaluation (Ditto healthcare platform)
+- Software Engineering and System Architecture
+- Search Algorithm Development
 
 ## Technology Stack
 

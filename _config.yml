@@ -2,8 +2,8 @@
 title: Axolotl Systems
 email: hello@axolotl.systems
 description: >-
-  Software engineering and technical leadership consultancy. Building and deploying 
-  software systems to production. Specializing in AI/ML but working with any software that needs to scale.
+  Building search algorithms, social platforms, and scalable systems that matter.
+  Currently developing peerpressure and evaluating ML systems at Ditto.
 baseurl: ""
 url: "https://axolotl.systems"
 
@@ -19,7 +19,7 @@ plugins:
 # Custom variables
 company:
   name: "Axolotl Systems"
-  tagline: "Precision in every algorithm"
+  tagline: "I build search algorithms, social platforms, and scalable systems that matter."
   founder: "Anne Schuth"
   phone: ""
   address: ""
